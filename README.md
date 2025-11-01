@@ -6,7 +6,7 @@
 
 ### О проекте
 
-Данный учебный проект реализован в процессе прохождения курса [Python-разработчик](https://ru.hexlet.io/programs/python).\
+Данный проект реализован в процессе прохождения курса [Python-разработчик](https://ru.hexlet.io/programs/python).\
 В нем реализован скрипт для вычисления различий между двумя файлами в форматах `json` или `yml`.
 
 ### Инструкция по запуску
@@ -28,3 +28,5 @@
    Флаг `--force` нужен на случай, если данный пакет уже был установлен ранее.
 
 3. Демонстрация работы скрипта:
+
+   [![asciicast](https://asciinema.org/a/fTQpYCIgagM91HpFwQzrQ5UcK.svg)](https://asciinema.org/a/fTQpYCIgagM91HpFwQzrQ5UcK)
