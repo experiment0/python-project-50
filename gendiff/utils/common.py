@@ -4,6 +4,8 @@ from typing import List, Optional, Union
 
 from pydantic import BaseModel
 
+from gendiff.utils.file_parsing import get_data_from_file
+
 
 # R ~ Result
 class R(Enum):
@@ -66,8 +68,11 @@ def diffs_to_str(diffs: List[DiffItem]) -> str:
 
 
 def generate_diff(file_path1: str, file_path2: str) -> str:
-    dict1 = json.load(open(file_path1))
-    dict2 = json.load(open(file_path2))
+    dict1 = get_data_from_file(file_path1)
+    dict2 = get_data_from_file(file_path2)
+    
+    if dict1 is None or dict2 is None:
+        raise ValueError("Failed to retrieve file contents.")
     
     diffs = get_diffs(dict1, dict2)
     diffs_str = diffs_to_str(diffs)
