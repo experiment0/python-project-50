@@ -6,6 +6,7 @@
 
 [![Actions Status](https://github.com/experiment0/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/experiment0/python-project-50/actions)
 [![hexlet-check](https://github.com/experiment0/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/experiment0/python-project-50/actions/workflows/hexlet-check.yml)
+[![Python CI](https://github.com/experiment0/python-project-50/actions/workflows/pyci.yml/badge.svg)](https://github.com/experiment0/python-project-50/actions/workflows/pyci.yml)
 
 ### Статусы [SonarCloud](https://sonarcloud.io/)
 
