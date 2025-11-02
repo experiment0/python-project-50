@@ -1,6 +1,7 @@
-from enum import Enum
-from typing import Union, Optional, List
 import json
+from enum import Enum
+from typing import List, Optional, Union
+
 from pydantic import BaseModel
 
 
@@ -9,6 +10,7 @@ class R(Enum):
     EQUALL = " "
     ADD = "+"
     REMOVE = "-"
+
 
 class DiffItem(BaseModel):
     result: R
@@ -25,17 +27,27 @@ def get_diffs(dict1: dict, dict2: dict) -> List[DiffItem]:
         if key in dict1 and key in dict2:
             if dict1[key] == dict2[key]:
                 # Значение не изменилось
-                diffs.append(DiffItem(result=R.EQUALL, key=key, value=dict1[key]))
+                diffs.append(
+                    DiffItem(result=R.EQUALL, key=key, value=dict1[key])
+                )
             else:
                 # Значение изменилось
-                diffs.append(DiffItem(result=R.REMOVE, key=key, value=dict1[key]))
-                diffs.append(DiffItem(result=R.ADD, key=key, value=dict2[key]))
+                diffs.append(
+                    DiffItem(result=R.REMOVE, key=key, value=dict1[key])
+                )
+                diffs.append(
+                    DiffItem(result=R.ADD, key=key, value=dict2[key])
+                )
         # Ключ удален из первого файла
         elif key in dict1 and key not in dict2:
-            diffs.append(DiffItem(result=R.REMOVE, key=key, value=dict1[key]))
+            diffs.append(
+                DiffItem(result=R.REMOVE, key=key, value=dict1[key])
+            )
         # Остается вариант, что ключа нет в первом файле и он появился во втором
         else:
-            diffs.append(DiffItem(result=R.ADD, key=key, value=dict2[key]))
+            diffs.append(
+                DiffItem(result=R.ADD, key=key, value=dict2[key])
+            )
     
     return diffs
 
@@ -44,7 +56,8 @@ def diffs_to_str(diffs: List[DiffItem]) -> str:
     result = "{\n"
     
     for d in diffs:
-        formatted_value = d.value if isinstance(d.value, str) else json.dumps(d.value)
+        formatted_value = d.value if isinstance(d.value, str) \
+                                  else json.dumps(d.value)
         result += f"    {d.result.value} {d.key}: {formatted_value}\n"
     
     result += "}"
