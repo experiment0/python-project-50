@@ -8,7 +8,7 @@
 [![hexlet-check](https://github.com/experiment0/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/experiment0/python-project-50/actions/workflows/hexlet-check.yml)
 [![Python CI](https://github.com/experiment0/python-project-50/actions/workflows/pyci.yml/badge.svg)](https://github.com/experiment0/python-project-50/actions/workflows/pyci.yml)
 
-### Статусы [SonarCloud](https://sonarcloud.io/)
+### Статусы [SonarQube](https://sonarcloud.io/)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=experiment0_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=experiment0_python-project-50)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=experiment0_python-project-50&metric=bugs)](https://sonarcloud.io/summary/new_code?id=experiment0_python-project-50)
