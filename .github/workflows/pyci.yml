@@ -42,7 +42,7 @@ jobs:
           make test-coverage
       # Запускаем работу сканера SonarCloud
       - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarqube-scan-action@v6
         # Токен задается в интерфейсе github
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
