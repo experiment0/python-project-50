@@ -53,6 +53,5 @@ jobs:
           args: >
             -Dsonar.projectKey=experiment0_python-project-50
             -Dsonar.organization=sdfja3905802-cxgw34923fsf
-            -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.tests=tests/
+            -Dsonar.python.coverage.reportPaths=coverage.xml            
             -Dsonar.test.exclusions=tests/**
