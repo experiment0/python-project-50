@@ -26,7 +26,7 @@ DiffsType = List[DiffItem]
 
 def get_diffs(dict1: DictType, dict2: DictType) -> DiffsType:
     # Ключи обоих словарей
-    all_keys = sorted(list(set(dict1.keys()) | set(dict2.keys())))
+    all_keys = sorted(set(dict1.keys()) | set(dict2.keys()))
     # Список различий
     diffs = []
 
