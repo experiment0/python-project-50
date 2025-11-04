@@ -56,3 +56,4 @@ jobs:
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.sources=gendiff/
             -Dsonar.test.exclusions=tests/**
+            -Dsonar.python.version=3.13
