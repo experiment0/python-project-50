@@ -16,6 +16,8 @@ jobs:
       # uses запускает указанный экшн
       # Экшн версии v4 клонирует репозиторий
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       # Произвольное имя шага
       - name: Set up Python
         # Запускаем экш установки python
