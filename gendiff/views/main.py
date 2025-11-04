@@ -5,7 +5,7 @@ from gendiff.views.json.view import get_json_view
 from gendiff.views.plain.view import get_plain_view
 from gendiff.views.stylish.view import get_stylish_view
 
-DiffViewType = Literal["stylish", "json", "plain"]
+DiffViewType = Literal["stylish", "stylish_colored", "json", "plain"]
 
 
 def get_diffs_view(
@@ -15,6 +15,8 @@ def get_diffs_view(
     match view_type:
         case "stylish":
             return get_stylish_view(diffs)
+        case "stylish_colored":
+            return get_stylish_view(diffs, is_colored=True)
         case "json":
             return get_json_view(diffs)
         case "plain":

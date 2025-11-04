@@ -4,6 +4,7 @@ from gendiff.models.calc_diff import (
     DictValueType,
     ResultType,
 )
+from gendiff.utils.colored import colored
 
 INDENT_SYMBOL = " "
 INDENT_LENGTH = 4
@@ -76,12 +77,18 @@ def get_indent_before_symbol(level: int) -> str:
     return (INDENT * level)[:-2]
 
 
-def get_diff_line(level: int, result: ResultType, key, value):
+def get_diff_line(level: int, result: ResultType, key, value, is_colored):
     value_str = dict_value_to_str(value)
     
     if isinstance(value, dict):        
         value_str = get_multilines_value_with_indent(value_str, INDENT * level)
-        
+    
     symbol = result_to_symbol_map[result]
+    
+    if is_colored:
+        if result == "add":
+            symbol = colored(symbol, "green")
+        elif result == "remove":
+            symbol = colored(symbol, "red")
    
     return f"{get_indent_before_symbol(level)}{symbol} {key}: {value_str}"
