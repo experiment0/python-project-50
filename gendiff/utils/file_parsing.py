@@ -1,7 +1,6 @@
 import json
 from enum import Enum
 from pathlib import Path
-from typing import Optional
 
 import yaml
 
@@ -15,7 +14,7 @@ JSON_EXTS = [".json"]
 YAML_EXTS = [".yaml", ".yml"]
 
 
-def get_file_type(file_path: str) -> Optional[FileType]:
+def get_file_type(file_path: str) -> FileType:
     file_ext = Path(file_path).suffix.lower()
     
     if file_ext in JSON_EXTS:
@@ -23,10 +22,13 @@ def get_file_type(file_path: str) -> Optional[FileType]:
     elif file_ext in YAML_EXTS:
         return FileType.YAML
     
-    return None
+    raise ValueError(
+        "Unknown file extension. " + 
+        f"Use files {', '.join(JSON_EXTS)}, {', '.join(YAML_EXTS)}"
+    )
 
 
-def get_data_from_file(file_path: str) -> Optional[dict]:
+def get_data_from_file(file_path: str) -> dict:
     file_type = get_file_type(file_path)
     
     match file_type:
@@ -37,5 +39,5 @@ def get_data_from_file(file_path: str) -> Optional[dict]:
                 data = yaml.safe_load(file)  
             return data 
         case _:
-            return None
+            raise ValueError("Failed to retrieve file contents.")
         

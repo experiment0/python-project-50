@@ -1,0 +1,120 @@
+{
+    "diffs": [
+        {
+            "result": "equal",
+            "key": "common",
+            "children": [
+                {
+                    "result": "add",
+                    "key": "follow",
+                    "new_value": false
+                },
+                {
+                    "result": "equal",
+                    "key": "setting1",
+                    "old_value": "Value 1",
+                    "new_value": "Value 1"
+                },
+                {
+                    "result": "remove",
+                    "key": "setting2",
+                    "old_value": 200
+                },
+                {
+                    "result": "change",
+                    "key": "setting3",
+                    "old_value": true
+                },
+                {
+                    "result": "add",
+                    "key": "setting4",
+                    "new_value": "blah blah"
+                },
+                {
+                    "result": "add",
+                    "key": "setting5",
+                    "new_value": {
+                        "key5": "value5"
+                    }
+                },
+                {
+                    "result": "equal",
+                    "key": "setting6",
+                    "children": [
+                        {
+                            "result": "equal",
+                            "key": "doge",
+                            "children": [
+                                {
+                                    "result": "change",
+                                    "key": "wow",
+                                    "old_value": "",
+                                    "new_value": "so much"
+                                }
+                            ]
+                        },
+                        {
+                            "result": "equal",
+                            "key": "key",
+                            "old_value": "value",
+                            "new_value": "value"
+                        },
+                        {
+                            "result": "add",
+                            "key": "ops",
+                            "new_value": "vops"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "result": "equal",
+            "key": "group1",
+            "children": [
+                {
+                    "result": "change",
+                    "key": "baz",
+                    "old_value": "bas",
+                    "new_value": "bars"
+                },
+                {
+                    "result": "equal",
+                    "key": "foo",
+                    "old_value": "bar",
+                    "new_value": "bar"
+                },
+                {
+                    "result": "change",
+                    "key": "nest",
+                    "old_value": {
+                        "key": "value"
+                    },
+                    "new_value": "str"
+                }
+            ]
+        },
+        {
+            "result": "remove",
+            "key": "group2",
+            "old_value": {
+                "abc": 12345,
+                "deep": {
+                    "id": 45
+                }
+            }
+        },
+        {
+            "result": "add",
+            "key": "group3",
+            "new_value": {
+                "deep": {
+                    "id": {
+                        "number": 45
+                    }
+                },
+                "fee": 100500
+            }
+        }
+    ]
+}

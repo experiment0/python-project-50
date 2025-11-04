@@ -11,9 +11,6 @@ def generate_diff(
     dict1 = get_data_from_file(file_path1)
     dict2 = get_data_from_file(file_path2)
     
-    if dict1 is None or dict2 is None:
-        raise ValueError("Failed to retrieve file contents.")
-    
     diffs = get_diffs(dict1, dict2)
     diffs_view = get_diffs_view(diffs, view_type)
     
