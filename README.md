@@ -1,4 +1,4 @@
-# Вычислитель различий в json и yml файлах
+# Вычислитель различий в конфигурационных файлах в форматах json и yml
 
 ## Статусы
 
@@ -47,4 +47,4 @@
 
 3. Демонстрация работы скрипта:
 
-   [![asciicast](https://asciinema.org/a/uOu6ctLyHUiomb6iEebTEWVIT.svg)](https://asciinema.org/a/uOu6ctLyHUiomb6iEebTEWVIT)
+   [![asciicast](https://asciinema.org/a/tstZArOclkMDlGRq7BEyhSqg1.svg)](https://asciinema.org/a/tstZArOclkMDlGRq7BEyhSqg1)
