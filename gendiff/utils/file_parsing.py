@@ -12,6 +12,7 @@ class FileType(Enum):
 
 JSON_EXTS = [".json"]
 YAML_EXTS = [".yaml", ".yml"]
+AVAILABLE_FILE_EXTX = ", ".join(JSON_EXTS + YAML_EXTS)
 
 
 def get_file_type(file_path: str) -> FileType:
@@ -23,8 +24,7 @@ def get_file_type(file_path: str) -> FileType:
         return FileType.YAML
     
     raise ValueError(
-        "Unknown file extension. " + 
-        f"Use files {', '.join(JSON_EXTS)}, {', '.join(YAML_EXTS)}"
+        f"Unknown file extension. Use files in {AVAILABLE_FILE_EXTX} format."
     )
 
 

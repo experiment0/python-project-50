@@ -1,17 +1,26 @@
 from argparse import ArgumentParser
+from typing import get_args
 
 from gendiff import generate_diff
+from gendiff.utils.file_parsing import AVAILABLE_FILE_EXTX
+from gendiff.views.main import DiffViewType
 
 
 def main():
     # Создаем объект парсера аргументов и указываем описание скрипта
     parser = ArgumentParser(
-        description="Compares two configuration files and shows a difference.",
+        description="Compares two configuration files " + 
+            f"in {AVAILABLE_FILE_EXTX} format and displays the differences.",
+        
     )
     
     # Добавляем именованный аргумент
     parser.add_argument(
-        "-f", "--format", type=str, default="stylish", help="output format"
+        "-f", "--format", 
+        type=str, 
+        default="stylish", 
+        help="output format",
+        choices=list(get_args(DiffViewType))
     )
     
     # Добавляем 2 позиционных аргумента
