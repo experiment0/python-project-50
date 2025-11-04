@@ -47,4 +47,4 @@
 
 3. Демонстрация работы скрипта:
 
-   [![asciicast](https://asciinema.org/a/J2ggRqu2Cdn3zIE0WZDn1qbV0.svg)](https://asciinema.org/a/J2ggRqu2Cdn3zIE0WZDn1qbV0)
+   [![asciicast](https://asciinema.org/a/uOu6ctLyHUiomb6iEebTEWVIT.svg)](https://asciinema.org/a/uOu6ctLyHUiomb6iEebTEWVIT)
