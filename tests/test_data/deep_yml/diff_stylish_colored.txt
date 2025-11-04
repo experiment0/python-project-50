@@ -1,0 +1,44 @@
+{
+    common: {
+      \x1b[32m+\x1b[0m follow: false
+        setting1: Value 1
+      \x1b[31m-\x1b[0m setting2: 200
+      \x1b[31m-\x1b[0m setting3: true
+      \x1b[32m+\x1b[0m setting3: null
+      \x1b[32m+\x1b[0m setting4: blah blah
+      \x1b[32m+\x1b[0m setting5: {
+            key5: value5
+        }
+        setting6: {
+            doge: {
+              \x1b[31m-\x1b[0m wow: 
+              \x1b[32m+\x1b[0m wow: so much
+            }
+            key: value
+          \x1b[32m+\x1b[0m ops: vops
+        }
+    }
+    group1: {
+      \x1b[31m-\x1b[0m baz: bas
+      \x1b[32m+\x1b[0m baz: bars
+        foo: bar
+      \x1b[31m-\x1b[0m nest: {
+            key: value
+        }
+      \x1b[32m+\x1b[0m nest: str
+    }
+  \x1b[31m-\x1b[0m group2: {
+        abc: 12345
+        deep: {
+            id: 45
+        }
+    }
+  \x1b[32m+\x1b[0m group3: {
+        deep: {
+            id: {
+                number: 45
+            }
+        }
+        fee: 100500
+    }
+}
