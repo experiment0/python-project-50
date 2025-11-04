@@ -5,6 +5,7 @@ from gendiff import generate_diff
 
 # uv run python ./gendiff/scripts/main.py -h
 # uv run python ./gendiff/scripts/main.py f1 f2
+# uv run python ./gendiff/scripts/main.py --format plain f1 f2
 # ruff: noqa: E501
 def main():
     # Создаем объект парсера аргументов и указываем описание скрипта
