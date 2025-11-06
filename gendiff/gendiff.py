@@ -1,6 +1,6 @@
-from gendiff.models.calc_diff import get_diffs
-from gendiff.utils.file_parsing import get_data_from_file
-from gendiff.views.main import DiffViewType, get_diffs_view
+from gendiff.diffs_model import get_diffs
+from gendiff.formatters import DiffViewType, format_diffs
+from gendiff.utils.file_reader import get_data_from_file
 
 
 def generate_diff(
@@ -12,6 +12,6 @@ def generate_diff(
     dict2 = get_data_from_file(file_path2)
     
     diffs = get_diffs(dict1, dict2)
-    diffs_view = get_diffs_view(diffs, view_type)
+    formatted_diffs = format_diffs(diffs, view_type)
     
-    return diffs_view
+    return formatted_diffs

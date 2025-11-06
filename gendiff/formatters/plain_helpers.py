@@ -1,4 +1,4 @@
-from gendiff.models.calc_diff import DictValueType
+from gendiff.diffs_model import DictValueType
 
 
 def dict_value_to_str(value: DictValueType) -> str:

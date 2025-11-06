@@ -1,6 +1,6 @@
 from typing import Dict, Optional, Union
 
-from gendiff.models.calc_diff import (
+from gendiff.diffs_model import (
     DictValueType,
     ResultType,
 )

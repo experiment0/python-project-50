@@ -2,8 +2,8 @@ from argparse import ArgumentParser
 from typing import get_args
 
 from gendiff import generate_diff
-from gendiff.utils.file_parsing import AVAILABLE_FILE_EXTX
-from gendiff.views.main import DiffViewType
+from gendiff.formatters import DiffViewType
+from gendiff.utils.file_reader import AVAILABLE_FILE_EXTX
 
 
 def main():
@@ -11,7 +11,6 @@ def main():
     parser = ArgumentParser(
         description="Compares two configuration files " + 
             f"in {AVAILABLE_FILE_EXTX} format and displays the differences.",
-        
     )
     
     # Добавляем именованный аргумент
@@ -31,9 +30,9 @@ def main():
     # с которыми был вызван скрипт    
     args = parser.parse_args()
     
-    diffs_str = generate_diff(args.filepath1, args.filepath2, args.format)
+    formatted_diffs = generate_diff(args.filepath1, args.filepath2, args.format)
     
-    print(diffs_str)
+    print(formatted_diffs)
 
 
 if __name__ == "__main__":

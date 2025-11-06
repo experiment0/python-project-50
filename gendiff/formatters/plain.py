@@ -1,10 +1,10 @@
 from typing import List
 
-from gendiff.models.calc_diff import DiffsType
-from gendiff.views.plain.utils import dict_value_to_str
+from gendiff.diffs_model import DiffsType
+from gendiff.formatters.plain_helpers import dict_value_to_str
     
 
-def get_plain_view(diffs: DiffsType, property_path: List[str] = []) -> str:
+def format_to_plain(diffs: DiffsType, property_path: List[str] = []) -> str:
     diffs_lines = []
     
     for d in diffs:
@@ -14,7 +14,7 @@ def get_plain_view(diffs: DiffsType, property_path: List[str] = []) -> str:
         match d.result:
             case "equal":
                 if d.children is not None:
-                    children_view = get_plain_view(
+                    children_view = format_to_plain(
                         d.children,
                         current_property_path,
                     )
