@@ -2,25 +2,47 @@ import pytest
 
 from gendiff import generate_diff
 
+file_json_1 = "file_1_1.json"
+file_json_2 = "file_1_2.json"
+
+file_yml_1 = "file_2_1.yml"
+file_yml_2 = "file_2_2.yml"
+
+diffs_files = {
+    "stylish": "diffs_format_stylish.txt",
+    "stylish_colored": "diffs_format_stylish_colored.txt",
+    "plain": "diffs_format_plain.txt",
+    "json": "diffs_format_json.json",
+}
 
 test_params = [
-    ("deep", "file_1_1.json", "file_1_2.json", "stylish", "diffs_format_stylish.txt"),
-    ("deep", "file_1_1.json", "file_1_2.json", "stylish_colored", "diffs_format_stylish_colored.txt"),    
-    ("deep", "file_1_1.json", "file_1_2.json", "plain", "diffs_format_plain.txt"),
-    ("deep", "file_1_1.json", "file_1_2.json", "json", "diffs_format_json.json"),
+    ("deep", file_json_1, file_json_2, "stylish", diffs_files["stylish"]),
+    (
+        "deep", file_json_1, file_json_2, 
+        "stylish_colored", diffs_files["stylish_colored"]
+    ),    
+    ("deep", file_json_1, file_json_2, "plain", diffs_files["plain"]),
+    ("deep", file_json_1, file_json_2, "json",  diffs_files["json"]),
     
-    ("deep", "file_2_1.yml", "file_2_2.yml", "stylish", "diffs_format_stylish.txt"),
-    ("deep", "file_2_1.yml", "file_2_2.yml", "stylish_colored", "diffs_format_stylish_colored.txt"),
-    ("deep", "file_2_1.yml", "file_2_2.yml", "plain", "diffs_format_plain.txt"),
-    ("deep", "file_2_1.yml", "file_2_2.yml", "json", "diffs_format_json.json"),
+    ("deep", file_yml_1, file_yml_2, "stylish", diffs_files["stylish"]),
+    (
+        "deep", file_yml_1, file_yml_2, 
+        "stylish_colored", diffs_files["stylish_colored"]
+    ),
+    ("deep", file_yml_1, file_yml_2, "plain",  diffs_files["plain"]),
+    ("deep", file_yml_1, file_yml_2, "json", diffs_files["json"]),
     
-    ("flat", "file_1_1.json", "file_1_2.json", "stylish", "diffs_format_stylish.txt"),
-    
-    ("flat", "file_2_1.yml", "file_2_2.yml", "stylish", "diffs_format_stylish.txt"),
+    ("flat", file_json_1, file_json_2, "stylish", diffs_files["stylish"]),    
+    ("flat", file_yml_1, file_yml_2, "stylish", diffs_files["stylish"]),
 ]
 
-@pytest.mark.parametrize("folder, file1, file2, format_name, diffs_file", test_params)
-def test_generate_diff(folder, file1, file2, format_name, diffs_file, test_data_path):
+
+@pytest.mark.parametrize(
+    "folder, file1, file2, format_name, diffs_file", test_params
+)
+def test_generate_diff(
+    folder, file1, file2, format_name, diffs_file, test_data_path
+):
     FILES_PATH = f"{test_data_path}/{folder}"
     
     file1_path = f"{FILES_PATH}/{file1}"
