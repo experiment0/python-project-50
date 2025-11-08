@@ -20,19 +20,19 @@ test_params = [
     (
         "deep", file_json_1, file_json_2, 
         "stylish_colored", diffs_files["stylish_colored"]
-    ),    
+    ), 
     ("deep", file_json_1, file_json_2, "plain", diffs_files["plain"]),
-    ("deep", file_json_1, file_json_2, "json",  diffs_files["json"]),
+    ("deep", file_json_1, file_json_2, "json", diffs_files["json"]),
     
     ("deep", file_yml_1, file_yml_2, "stylish", diffs_files["stylish"]),
     (
         "deep", file_yml_1, file_yml_2, 
         "stylish_colored", diffs_files["stylish_colored"]
     ),
-    ("deep", file_yml_1, file_yml_2, "plain",  diffs_files["plain"]),
+    ("deep", file_yml_1, file_yml_2, "plain", diffs_files["plain"]),
     ("deep", file_yml_1, file_yml_2, "json", diffs_files["json"]),
     
-    ("flat", file_json_1, file_json_2, "stylish", diffs_files["stylish"]),    
+    ("flat", file_json_1, file_json_2, "stylish", diffs_files["stylish"]), 
     ("flat", file_yml_1, file_yml_2, "stylish", diffs_files["stylish"]),
 ]
 
