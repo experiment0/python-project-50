@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from typing import get_args
 
 from gendiff import generate_diff
-from gendiff.formatters import DiffViewType
+from gendiff.diffs_views import DiffViewType
 from gendiff.utils.file_reader import AVAILABLE_FILE_EXTX
 
 
@@ -30,9 +30,9 @@ def main():
     # с которыми был вызван скрипт    
     args = parser.parse_args()
     
-    formatted_diffs = generate_diff(args.filepath1, args.filepath2, args.format)
+    diffs_view = generate_diff(args.filepath1, args.filepath2, args.format)
     
-    print(formatted_diffs)
+    print(diffs_view)
 
 
 if __name__ == "__main__":

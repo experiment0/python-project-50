@@ -1,31 +1,31 @@
 from typing import Literal
 
 from gendiff.diffs_model import DiffsType
-from gendiff.formatters.json import format_to_json
-from gendiff.formatters.plain import format_to_plain
-from gendiff.formatters.stylish import format_to_stylish
+from gendiff.diffs_views.json import get_json_view
+from gendiff.diffs_views.plain import get_plain_view
+from gendiff.diffs_views.stylish import get_stylish_view
 
 DiffViewType = Literal["stylish", "stylish_colored", "json", "plain"]
 
 
-def format_diffs(
+def get_diffs_view(
     diffs: DiffsType, 
     view_type: DiffViewType = "stylish"
 ) -> str:
     match view_type:
         case "stylish":
-            return format_to_stylish(diffs)
+            return get_stylish_view(diffs)
         case "stylish_colored":
-            return format_to_stylish(diffs, is_colored=True)
+            return get_stylish_view(diffs, is_colored=True)
         case "json":
-            return format_to_json(diffs)
+            return get_json_view(diffs)
         case "plain":
-            return format_to_plain(diffs)
+            return get_plain_view(diffs)
         case _:
             raise ValueError("Unknown name for format output.")
 
 
 __all__ = [
     "DiffViewType",
-    "format_diffs",
+    "get_diffs_view",
 ]

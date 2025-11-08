@@ -1,12 +1,12 @@
 from gendiff.diffs_model import DiffsType
-from gendiff.formatters.stylish_helpers import (
+from gendiff.diffs_views.stylish_helpers import (
     INDENT,
     get_diff_line,
     get_multilines_value_with_indent,
 )
 
 
-def format_to_stylish(diffs: DiffsType, is_colored: bool = False) -> str:
+def get_stylish_view(diffs: DiffsType, is_colored: bool = False) -> str:
     level = 1
     diffs_lines = []
     diffs_lines.append("{")
@@ -19,7 +19,7 @@ def format_to_stylish(diffs: DiffsType, is_colored: bool = False) -> str:
         match d.result:
             case "equal":
                 if d.children is not None:
-                    children_view = format_to_stylish(d.children, is_colored)
+                    children_view = get_stylish_view(d.children, is_colored)
                     children_view = get_multilines_value_with_indent(
                         children_view,
                         INDENT * level
